@@ -7,10 +7,15 @@ import pool from './config.js'
 
 const app = express()
 const __dirname = path.resolve()
+dotenv.config()
 app.use(cors())
 app.use(json({ extended: true}))
 
-// app.use('/', express.static('./client/build'))
+
+if(process.env.NODE_ENV === 'production'){
+   app.use('/', express.static(path.join(__dirname + 'client/build')))
+
+}
 
 const PORT = process.env.PORT || 5000
 
