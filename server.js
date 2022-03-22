@@ -4,9 +4,13 @@ import dotenv from 'dotenv'
 import path from 'path'
 import pool from './config.js'
 
+
 const app = express()
+const __dirname = path.resolve()
 app.use(cors())
 app.use(json({ extended: true}))
+
+// app.use('/', express.static('./client/build'))
 
 const PORT = process.env.PORT || 5000
 

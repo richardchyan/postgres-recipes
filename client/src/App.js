@@ -9,7 +9,7 @@ import Colorpicker from './Toggles/Colorpicker';
 import ModeToggle from './Toggles/ModeToggle';
 import SkeletonForm from './Skeletons/SkeletonForm';
 import SkeletonRecipe from './Skeletons/SkeletonRecipe';
-import SkeletonNavbar from './Skeletons/components/SkeletonNavbar';
+import SkeletonNavbar from './Skeletons/SkeletonNavbar';
 
 function App() {
 
@@ -18,8 +18,8 @@ function App() {
 
   if (isLoading && mode === 'light') {
     return (
-      <div>
-        <SkeletonNavbar />
+      <div className="text-sky-700">
+      <SkeletonNavbar />
         <SkeletonForm />
         <SkeletonRecipe />
         <SkeletonRecipe />
@@ -31,8 +31,10 @@ function App() {
 
   if (isLoading && mode === 'dark') {
     return (
-      <div className="bg-gray-800">
-        <SkeletonNavbar />
+      <div className="bg-gray-800 text-white">
+        <div className="bg-gray-700">
+          <SkeletonNavbar />
+        </div>
         <SkeletonForm />
         <SkeletonRecipe />
         <SkeletonRecipe />
@@ -44,10 +46,10 @@ function App() {
 
   return (
     <Router>
-      <div className={ mode === 'light' ? 'App' : 'App dark bg-gray-800'}>
+      <div className={ mode === 'light' ? 'App h-screen' : 'App dark bg-gray-800 h-screen'}>
         <Navbar />
         <div className="flex justify-between items-center max-w-screen-md m-auto mt-2 px-4">
-          <Colorpicker/>
+          {/* <Colorpicker/> */}
           <ModeToggle />
         </div>
         <Routes>

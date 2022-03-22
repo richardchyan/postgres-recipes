@@ -1,11 +1,8 @@
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useState } from 'react'
 import RecipeForm from './RecipeForm'
 import RecipeList from './RecipeList'
 import axios from 'axios'
 import { useAuth0 } from '@auth0/auth0-react'
-import SkeletonCard from './Skeletons/SkeletonCard'
-import SkeletonRecipe from './Skeletons/SkeletonRecipe'
-import SkeletonForm from './Skeletons/SkeletonForm'
 
 const Home = () => {
 
@@ -14,7 +11,7 @@ const Home = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="text-4xl h-screen mt-10 dark:bg-gray-800 dark:text-white duration-700">
+      <div className="text-4xl h-screen mt-10 dark:bg-gray-800 dark:text-white">
         You are not logged in. Please log in to create recipes
       </div>
     );
@@ -31,12 +28,14 @@ const Home = () => {
     }
  }
 
-  return (
-    <div className="py-4 px-2">
-      <RecipeForm fetchRecipes={fetchRecipes} user={user}/>
-      <RecipeList recipes={recipes} fetchRecipes={fetchRecipes}  />
-   </div>
-  )
+  if (recipes) {
+    return (
+      <div className="py-4 px-2">
+        <RecipeForm fetchRecipes={fetchRecipes} user={user} />
+        <RecipeList recipes={recipes} fetchRecipes={fetchRecipes} />
+      </div>
+    );
+  }
 }
 
 export default Home

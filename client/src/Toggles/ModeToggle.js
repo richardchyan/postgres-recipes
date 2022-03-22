@@ -10,7 +10,6 @@ const ModeToggle = () => {
   };
   
   localStorage.setItem('what-mode', mode)
-  console.log(mode);
 
   return (
     <div>
