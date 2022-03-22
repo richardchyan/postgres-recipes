@@ -6,7 +6,7 @@ CREATE TABLE recipes (
    cook_method VARCHAR(255),
    cook_time VARCHAR(255),
    created_by VARCHAR(255),
-   created_at TIMESTAMPTZ NOT NULL,
-   updated_at TIMESTAMPTZ NOT NULL
+   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 
 )
