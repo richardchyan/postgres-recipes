@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const SkeletonText = ({ colspan, height = "4" }) => {
+const SkeletonText = ({height, width}) => {
   return (
-    <div className={`bg-gray-200 rounded-md h-${height} ${colspan}`}>
+    <div
+      className={`bg-gray-200  rounded-md h-${height} w-${width} animate-pulse`}
+    ></div>
+  );
+};
 
-    </div>
-  )
-}
-
-export default SkeletonText
+export default SkeletonText;

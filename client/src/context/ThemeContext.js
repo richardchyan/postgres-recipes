@@ -1,4 +1,4 @@
-import { createContext, useReducer } from 'react'
+import { createContext, useReducer, useEffect } from 'react'
 
 const ThemeContext = createContext()
 
@@ -14,15 +14,16 @@ const themeReducer = (state, action) => {
       default:
          return state
    }
-
 }
+
+const storedMode = localStorage.getItem('what-mode')
 
 // Provider
 const ThemeProvider = ({ children }) => {
 
    const initialState = {
       color: '#dbeafe',
-      mode: 'light'
+      mode: storedMode
    }
 
    const [state, dispatch] = useReducer(themeReducer, initialState)

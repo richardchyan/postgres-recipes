@@ -5,19 +5,21 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      backgroundColor: {
-        primary: 'var(--color-bg-primary)',
-        secondary: 'var(--color-bg-secondary)',
-        tertiary: 'var(--color-bg-tertiary)',
-      },
-      textColor: {
-        accent: 'var(--color-text-accent)',
-        primary: 'var(--color-text-primary)',
-        secondary: 'var(--color-text-secondary)',
-        tertiary: 'var(--color-text-tertiary)'
-      },
       fontFamily: {
         poppins: 'Poppins, sans-serif'
+      },
+      keyframes:{
+        pulse: {
+          '0%, 100%' :{
+            opacity: 1
+          }, 
+          '50%': {
+            opacity: .3
+          }
+        }
+      },
+      animation: {
+        pulse: "pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       }
     },
   },

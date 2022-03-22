@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "./context/ThemeContext";
-import darkIcon from "./icons/dark.svg";
+import { ThemeContext } from "../context/ThemeContext";
+import darkIcon from "../icons/dark.svg";
 
 const ModeToggle = () => {
   const { mode, changeMode } = useContext(ThemeContext);
@@ -8,7 +8,8 @@ const ModeToggle = () => {
   const toggleMode = () => {
     changeMode(mode === "light" ? "dark" : "light");
   };
-
+  
+  localStorage.setItem('what-mode', mode)
   console.log(mode);
 
   return (

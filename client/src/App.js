@@ -1,22 +1,46 @@
 import './App.css';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ThemeContext } from './context/ThemeContext';
 import { useAuth0 } from '@auth0/auth0-react'
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './Navbar';
 import Home from './Home'
-import Colorpicker from './Colorpicker';
-import ModeToggle from './ModeToggle';
-
+import Colorpicker from './Toggles/Colorpicker';
+import ModeToggle from './Toggles/ModeToggle';
+import SkeletonForm from './Skeletons/SkeletonForm';
+import SkeletonRecipe from './Skeletons/SkeletonRecipe';
+import SkeletonNavbar from './Skeletons/components/SkeletonNavbar';
 
 function App() {
 
-  const { isLoading } = useAuth0()
+  const { isLoading, isAuthenticated } = useAuth0()
   const { mode } = useContext(ThemeContext)
 
-  if(isLoading){
-    return <div className="text-7xl text-center mt-10">...Loading</div>
-  }
+  if (isLoading && mode === 'light') {
+    return (
+      <div>
+        <SkeletonNavbar />
+        <SkeletonForm />
+        <SkeletonRecipe />
+        <SkeletonRecipe />
+        <SkeletonRecipe />
+        <SkeletonRecipe />
+      </div>
+    );
+  } 
+
+  if (isLoading && mode === 'dark') {
+    return (
+      <div className="bg-gray-800">
+        <SkeletonNavbar />
+        <SkeletonForm />
+        <SkeletonRecipe />
+        <SkeletonRecipe />
+        <SkeletonRecipe />
+        <SkeletonRecipe />
+      </div>
+    );
+  } 
 
   return (
     <Router>

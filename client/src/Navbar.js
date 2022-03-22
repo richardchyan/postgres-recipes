@@ -5,7 +5,7 @@ import AuthNav from './auth0-nav/AuthNav'
 const Navbar = () => {
 
    const [error, setError] = useState(null)
-   const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0()
+   const { user } = useAuth0()
  
    return (
      <>

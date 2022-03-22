@@ -1,13 +1,12 @@
 import React from 'react'
 import SkeletonAvatar from './components/SkeletonAvatar';
-import SkeletonButton from './components/SkeletonButton';
 import SkeletonImage from './components/SkeletonImage';
 import SkeletonText from './components/SkeletonText';
 import SkeletonTitle from './components/SkeletonTitle';
 
 const SkeletonCard = () => {
   return (
-    <div className="flex items-center justify-center  bg-blue-300">
+    <div className="flex items-center justify-center  bg-gray-50">
       {/* <!-- card --> */}
       <div className="w-80 h-80 bg-white rounded shadow-2xl border-2 border-black">
         {/* <!--      image --> */}

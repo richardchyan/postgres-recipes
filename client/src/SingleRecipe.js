@@ -44,7 +44,7 @@ const SingleRecipe = ({ recipe, fetchRecipes }) => {
          <p><span className="uppercase tracking-wider font-medium">Cook Time </span> : {recipe.cook_time} mins</p>
       </div>
       <div className="space-x-4 mt-4">
-        <button className="text-xl py-2 px-4 rounded-lg bg-orange-400" onClick={() => handleEdit(recipe.id)}>Edit</button>
+        <button className="text-xl py-2 px-4 rounded-lg bg-orange-400 dark:bg-orange-700" onClick={() => handleEdit(recipe.id)}>Edit</button>
         <button className="text-xl py-2 px-4 rounded-lg bg-red-800 text-white" onClick={() => handleDelete(recipe.id)}>Delete</button>
       </div>
       {showModal && 

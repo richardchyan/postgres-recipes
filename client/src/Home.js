@@ -10,14 +10,14 @@ import SkeletonForm from './Skeletons/SkeletonForm'
 const Home = () => {
 
   const [recipes, setRecipes] = useState([])
-  const { isAuthenticated, user } = useAuth0()
+  const {isAuthenticated, user } = useAuth0()
 
-  if(!isAuthenticated){
+  if (!isAuthenticated) {
     return (
-      <Fragment>
-        <div className="text-4xl h-64 grid place-items-center dark:bg-gray-800 dark:text-white duration-700">You are not logged in. Please log in to create recipes</div>
-      </Fragment>
-    )
+      <div className="text-4xl h-screen mt-10 dark:bg-gray-800 dark:text-white duration-700">
+        You are not logged in. Please log in to create recipes
+      </div>
+    );
   }
 
   const fetchRecipes = async() => {
@@ -25,7 +25,6 @@ const Home = () => {
     try {
        const { data } = await axios.get('/recipes')
        const authorizedData = data.filter(recipe => user.sub === recipe.created_by)
-       console.log(data)
        setRecipes(authorizedData)
     } catch (error) {
        console.log(error.message)
@@ -34,10 +33,7 @@ const Home = () => {
 
   return (
     <div className="py-4 px-2">
-      <SkeletonCard />
       <RecipeForm fetchRecipes={fetchRecipes} user={user}/>
-      <SkeletonForm />
-      <SkeletonRecipe />
       <RecipeList recipes={recipes} fetchRecipes={fetchRecipes}  />
    </div>
   )
