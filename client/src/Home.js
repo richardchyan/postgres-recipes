@@ -41,7 +41,7 @@ const Home = () => {
   const fetchRecipes = async() => {
 
     try {
-       const { data } = await axios.get('/recipes')
+       const { data } = await axios.get('https://postgres-recipe-maker.herokuapp.com/recipes')
        const authorizedData = data.filter(recipe => user.sub === recipe.created_by)
        setRecipes(authorizedData)
     } catch (error) {

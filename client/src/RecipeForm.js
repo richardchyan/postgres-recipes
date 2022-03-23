@@ -18,7 +18,7 @@ const RecipeForm = ({ fetchRecipes, isEdit, closeModal, recipe}) => {
       if(!isEdit){
          try {
             const newRecipe = { name, ingredients, cookTime, cookMethod, user: user.sub }
-            const { data } = await axios.post('/recipes', newRecipe)
+            const { data } = await axios.post('https://postgres-recipe-maker.herokuapp.com/recipes', newRecipe)
             setName('')
             setIngredients('')
             setCookMethod('')
@@ -31,7 +31,7 @@ const RecipeForm = ({ fetchRecipes, isEdit, closeModal, recipe}) => {
             try {
                const { id } = recipe
                const editedRecipe = { name, ingredients, cookTime, cookMethod }
-               const { data } = await axios.put(`/recipes/${id}`, editedRecipe)
+               const { data } = await axios.put(`https://postgres-recipe-maker.herokuapp.com/recipes/${id}`, editedRecipe)
                closeModal()
             } catch (error) {
                console.log(error.message)

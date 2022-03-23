@@ -27,7 +27,7 @@ const SingleRecipe = ({ recipe, fetchRecipes }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/recipes/${id}`)
+      await axios.delete(`https://postgres-recipe-maker.herokuapp.com/recipes/${id}`)
       fetchRecipes()
     } catch (error) {
       console.log(error.message)
