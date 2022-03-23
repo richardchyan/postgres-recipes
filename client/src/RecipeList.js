@@ -9,7 +9,7 @@ const RecipeList = ({ recipes, fetchRecipes }) => {
 
   return (
     <Fragment>
-     <h1 className="text-4xl uppercase tracking-wide my-2 dark:text-white">List of your recipes</h1>
+     <h1 className="text-4xl bg-sky-800 py-1 max-w-screen-md m-auto rounded uppercase tracking-wide my-2 text-white">List of your recipes</h1>
      <div className="grid grid-cols-1 max-w-screen-md m-auto space-y-4">
       {recipes && recipes.map(recipe => (
          <SingleRecipe recipe={recipe} key={recipe.id} fetchRecipes={fetchRecipes} />

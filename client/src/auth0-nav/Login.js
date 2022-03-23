@@ -9,7 +9,7 @@ const Login = () => {
     <div>
       <button
         onClick={() => loginWithRedirect({ returnTo: window.location.origin })}
-        className="text-2xl bg-blue-800 text-white rounded px-4 py-2"
+        className="text-md bg-sky-800 text-white rounded px-2 py-1 md:px-4 md:py-2"
       >
         Login
       </button>
