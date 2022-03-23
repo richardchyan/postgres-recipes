@@ -15,7 +15,7 @@ const Home = () => {
   if (!isAuthenticated) {
     return (
       <div className="lg:mb-8">
-        <div className="text-lg lg:text-2xl my-8 py-1 bg-sky-900 text-white font-poppins">
+        <div className="text-md lg:text-lg my-1 py-1 bg-sky-900 text-white font-poppins">
           You are not logged in. Please log in to create recipes.
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-screen-lg lg:space-y-0 m-auto items-center px-4">
@@ -24,9 +24,8 @@ const Home = () => {
             alt="Baking ingredients"
             className="object-cover object-bottom md:object-bottom w-full h-[275px] lg:w-[640px] lg:h-[635px] rounded-xl "
           />
-          <div className="flex justify-center items-center text-3xl w-full m-auto p-4 lg:text-6xl lg:h-[635px] lg:w-[475px] bg-sky-900 text-white font-poppins dark:border-2 dark:border-white rounded-2xl">
-            Write down your favourite recipes, foods, and ingredients. Never
-            forget them again.
+          <div className="flex justify-center items-center text-xl w-full m-auto p-4 lg:text-4xl lg:text-left lg:h-[635px] lg:w-[475px] bg-sky-900 text-white font-poppins dark:border-2 dark:border-white rounded-2xl">
+            Note down your favourite recipes, foods, and ingredients.<br className="hidden lg:block" /> <br/> Never forget them again.
           </div>
           <img
             src={photo2}

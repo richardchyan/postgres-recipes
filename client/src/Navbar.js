@@ -13,15 +13,15 @@ const Navbar = () => {
    const { user } = useAuth0()
  
    return (
-     <div className="bg-gray-50 dark:bg-gray-700">
+     <div className="bg-gray-100 dark:bg-gray-700">
        <nav className="grid grid-cols-1 md:grid-cols-2 max-w-screen-xl py-2 md:py-4 md:px-4 justify-between items-center m-auto  dark:text-white">
          <div className="flex justify-center items-center md:justify-start space-x-4">
            <h1 className="text-2xl md:text-5xl font-poppins uppercase tracking-wide text-sky-700 underline dark:text-white">
-             Recipes List Maker
+             Recipe List Maker
            </h1>
            <img src={bread} alt="Bread slice" style={{ filter: mode === 'dark' ? 'invert(100%)' : 'invert(0%)'}} />
          </div>
-         <div className="flex space-x-4 items-center justify-center md:justify-end mt-8 md:mt-0">
+         <div className="flex space-x-4 items-center justify-center md:justify-end mt-1 md:mt-0">
            {user && (
              <span className="text-lg font-semibold">
                Welcome back, {user.given_name ? user.given_name : user.nickname}

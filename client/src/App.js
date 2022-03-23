@@ -48,7 +48,7 @@ function App() {
     <Router>
       <div className={ mode === 'light' ? 'App h-screen' : 'App dark bg-gray-800 h-screen'}>
         <Navbar />
-        <div className="flex justify-between items-center max-w-screen-md m-auto mt-2 px-4">
+        <div className="flex justify-between items-center max-w-screen-md m-auto mt-1 px-4">
           {/* <Colorpicker/> */}
           <ModeToggle />
         </div>
