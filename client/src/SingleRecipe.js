@@ -35,10 +35,10 @@ const SingleRecipe = ({ recipe, fetchRecipes }) => {
   }
 
   return (
-    <div className="text-xl w-full m-auto border-2 rounded py-2 border-gray-300 shadow-md bg-blue-100 dark:text-white dark:bg-gray-800 duration-300" >
+    <div className="text-md lg:text-xl w-full m-auto border-2 rounded py-2 border-gray-300 shadow-md bg-blue-100 dark:text-white dark:bg-gray-800 duration-300" >
       {/* <h1 className="uppercase tracking-wide">Recipe # - {recipe.id}</h1> */}
-      <p className="text-3xl uppercase tracking-wider font-medium underline decoration-double mb-3">{recipe.recipe_name}</p>
-      <div className="text-left px-10">
+      <p className="text-lg lg:text-xl uppercase tracking-wider font-medium underline decoration-double mb-3">{recipe.recipe_name}</p>
+      <div className="text-left px-8">
          <p><span className="uppercase tracking-wider font-medium">Ingredients </span> : {recipe.ingredients}</p>
          <p><span className="uppercase tracking-wider font-medium">Cooking Method </span> : {recipe.cook_method}</p>
          <p><span className="uppercase tracking-wider font-medium">Cook Time </span> : {recipe.cook_time} mins</p>
